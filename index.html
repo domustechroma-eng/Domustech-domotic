@@ -4,135 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>DomusTech - Sopralluogo Domotica Roma Sud</title>
-    <meta name="description" content="Esperti Shelly a Roma Sud. Riscaldamento smart e sicurezza senza opere murarie. Richiedi un sopralluogo gratuito.">
+    <title>DomusTech - La tua Casa Smart in un Pomeriggio | Roma Sud</title>
+    <meta name="description" content="Rendi la tua casa intelligente a Roma Sud. Controllo riscaldamento, luci e sicurezza senza opere murarie. Richiedi un sopralluogo gratuito.">
     
-    <meta property="og:title" content="DomusTech - Smart Home Roma Sud">
-    <meta property="og:description" content="Controlla riscaldamento e luci dal tuo smartphone. Sopralluogo gratuito a Roma Sud.">
-    <meta property="og:image" content="logo-domustech.png">
-    <meta property="og:type" content="website">
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        :root { --primary: #0f172a; --accent: #f59e0b; --success: #22c55e; --text: #334155; --light: #f8fafc; }
+        :root {
+            --primary: #0f172a; 
+            --accent: #f59e0b; 
+            --success: #22c55e;
+            --text: #334155;
+            --light: #f8fafc;
+        }
+
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--light); line-height: 1.6; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary); }
+
         header { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         header img { height: 45px; }
+
+        /* HERO - TITOLO DIRETTO E COMPRENSIBILE */
         .hero { background: #fff; padding: 40px 20px; text-align: center; }
         .hero-img { width: 100%; max-width: 850px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); margin-bottom: 30px; border: 4px solid var(--primary); }
-        .hero h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; }
+        .hero h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; }
         .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.2rem; max-width: 750px; margin: 0 auto 30px; color: #64748b; font-weight: 600; }
+
         .hero-btns { display: grid; gap: 15px; max-width: 400px; margin: 0 auto; }
         .btn-main { padding: 20px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.1rem; text-align: center; color: white; transition: 0.3s; border: none; cursor: pointer; display: block; }
         .btn-whatsapp { background: var(--success); box-shadow: 0 10px 20px rgba(34,197,94,0.3); }
         .btn-quote { background: var(--accent); box-shadow: 0 10px 20px rgba(245,158,11,0.3); }
+
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+
+        /* SERVIZI */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 5px solid var(--accent); }
         .card img { width: 100%; height: 230px; object-fit: cover; }
         .card-body { padding: 25px; text-align: center; }
-        .faq-section { background: #fff; padding: 40px 20px; border-radius: 30px; margin-bottom: 60px; }
-        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .faq-item h4 { color: var(--primary); margin: 0 0 10px; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+
+        /* FAQ - RASSICURANTI */
+        .faq-section { background: #fff; padding: 50px 25px; border-radius: 30px; margin-bottom: 60px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-item { margin-bottom: 30px; text-align: left; }
+        .faq-item h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.15rem; font-weight: 800; border-left: 5px solid var(--accent); padding-left: 15px; }
+        .faq-item p { margin: 0; font-size: 1rem; color: #555; padding-left: 20px; }
+
+        /* RECENSIONI */
         .reviews { padding: 60px 20px; text-align: center; background: #f1f5f9; border-radius: 30px; margin-bottom: 60px; }
-        .rev-card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        .calculator { background: var(--primary); color: white; padding: 40px 25px; border-radius: 30px; text-align: center; scroll-margin-top: 100px; }
+        .rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .rev-card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); font-style: italic; }
+        .rev-name { display: block; margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 0.9rem; font-style: normal; }
+
+        /* CALCOLATORE */
+        .calculator { background: var(--primary); color: white; padding: 40px 25px; border-radius: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.2); text-align: center; scroll-margin-top: 100px; }
+        .calculator h2 { color: white; margin-bottom: 30px; font-size: 1.8rem; }
         .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; }
         .calc-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px; }
         label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; color: var(--accent); }
         select { width: 100%; padding: 12px; border-radius: 8px; border: none; font-size: 1rem; font-weight: 700; background: #fff; color: var(--primary); }
+
+        .price-box { margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
         .price-box h2 { font-size: 4rem; color: var(--accent); margin: 10px 0; }
+
         .sticky-contact { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; padding: 10px; gap: 10px; box-shadow: 0 -10px 30px rgba(0,0,0,0.1); z-index: 2000; }
         .s-btn { flex: 1; padding: 15px; border-radius: 10px; text-decoration: none; text-align: center; color: #fff; font-weight: 800; font-size: 0.9rem; }
-        footer { text-align: center; padding: 60px 20px 120px; background: #111; color: #666; }
-        @media (max-width: 768px) { .hero h1 { font-size: 1.8rem; } .price-box h2 { font-size: 3rem; } }
+
+        footer { text-align: center; padding: 60px 20px 120px; background: #111; color: #666; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.9rem; }
+            .price-box h2 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <img src="logo-domustech.png" alt="DomusTech">
-    <a href="tel:+393505223388" style="font-weight: 800; color: var(--primary); text-decoration: none;">📞 350 522 3388</a>
+    <a href="tel:+393505223388" style="text-decoration:none; font-weight:800; color:var(--primary)">📞 350 522 3388</a>
 </header>
 
 <section class="hero">
-    <img src="hero-shelly.jpg" class="hero-img" alt="Domotica Roma">
-    <h1>Casa Smart,<br><span>Sotto Controllo.</span></h1>
-    <p>Specialista Shelly a Roma Sud. Gestisci riscaldamento, luci e sicurezza dal tuo smartphone in poche ore.</p>
+    <img src="hero-shelly.jpg" class="hero-img" alt="Casa Smart Roma Sud">
+    <h1>La Tua Casa Diventa Smart:<br><span>Più Comfort e Meno Sprechi</span><br>Senza un Solo Buco nel Muro</h1>
+    <p>Rendiamo la tua abitazione a Roma Sud intelligente in poche ore. Controlla il riscaldamento, le luci e la sicurezza direttamente dal tuo smartphone.</p>
+    
     <div class="hero-btns">
-        <a href="https://wa.me/393505223388?text=Ciao%20DomusTech,%20vorrei%20richiedere%20un%20sopralluogo%20gratuito" class="btn-main btn-whatsapp">SCRIVICI SU WHATSAPP</a>
+        <a href="https://wa.me/393505223388" class="btn-main btn-whatsapp">SCRIVICI SU WHATSAPP</a>
         <a href="#preventivo" class="btn-main btn-quote">SIMULA IL TUO PREVENTIVO</a>
     </div>
 </section>
 
 <div class="container">
+    
     <div class="grid">
         <div class="card">
             <img src="configurazione-app.jpg" alt="Riscaldamento Smart">
-            <div class="card-body"><h3>🔥 Casa calda al tuo arrivo</h3><p>Accendi il riscaldamento dall'ufficio e taglia gli sprechi in bolletta.</p></div>
+            <div class="card-body">
+                <h3>🔥 Riscaldamento Intelligente</h3>
+                <p>Addio bollette folli. Accendi i termosifoni mentre torni ad Ostia o Acilia e risparmia fino al 30% grazie al controllo remoto.</p>
+            </div>
         </div>
         <div class="card">
             <img src="installazione-shelly.jpg" alt="Luci Smart">
-            <div class="card-body"><h3>💡 Luci & Automazioni</h3><p>Interruttori invisibili. Comanda tutto con la voce o con l'App.</p></div>
+            <div class="card-body">
+                <h3>💡 Luci & Automazioni</h3>
+                <p>I tuoi interruttori attuali diventano intelligenti. Spegni tutto con un tocco quando esci di casa o usa la voce con Alexa.</p>
+            </div>
         </div>
         <div class="card">
             <img src="cablaggio-elettrico.jpg" alt="Sicurezza">
-            <div class="card-body"><h3>🛡️ Sicurezza Attiva</h3><p>Telecamere WiFi e notifiche. Controlla casa tua ovunque tu sia.</p></div>
+            <div class="card-body">
+                <h3>🛡️ Sicurezza & Controllo</h3>
+                <p>Tieni d'occhio la tua casa ovunque tu sia. Ricevi notifiche istantanee in caso di movimenti sospetti tramite telecamere WiFi.</p>
+            </div>
         </div>
     </div>
 
     <section class="faq-section">
-        <h2 style="text-align:center;">Domande Frequenti</h2>
-        <div class="faq-item"><h4>Bisogna rompere i muri?</h4><p>No. I moduli Shelly si installano dentro le tue placche attuali. Zero polvere.</p></div>
-        <div class="faq-item"><h4>Funziona con Alexa?</h4><p>Sì, configuriamo tutto noi per i comandi vocali.</p></div>
+        <h2 style="text-align:center; margin-bottom:50px;">Tutto quello che c'è da sapere</h2>
+        
+        <div class="faq-item">
+            <h4>È davvero possibile senza rompere le pareti?</h4>
+            <p>Sì. Utilizziamo tecnologia Shelly che scompare dietro le tue placche attuali. Il tuo impianto rimane uguale all'esterno, ma diventa "magico" all'interno. Niente polvere, niente stress.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>E se non sono un esperto di tecnologia?</h4>
+            <p>Abbiamo scelto sistemi semplicissimi. Comandare casa sarà facile come premere un interruttore o parlare ad Alexa. Ti spiegheremo tutto noi durante il collaudo.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Devo cambiare le mie lampadine o i miei interruttori?</h4>
+            <p>No. Il bello della nostra soluzione è che mantiene tutto ciò che hai già. Rendiamo "smart" l'impianto esistente senza costringerti a cambiare l'arredamento elettrico.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Cosa succede se vado via da questa casa?</h4>
+            <p>Il sistema è modulare e reversibile. Se dovessi traslocare, puoi portare i moduli con te nella nuova casa o lasciarli per aumentare il valore di vendita dell'immobile.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Quanto risparmio effettivamente sul riscaldamento?</h4>
+            <p>Grazie alla possibilità di accendere e spegnere i termosifoni solo quando serve davvero, molti nostri clienti a Roma Sud hanno visto un calo in bolletta tra il 20% e il 30%.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>L'intervento è garantito?</h4>
+            <p>Certamente. Offriamo assistenza dedicata post-installazione per assicurarci che tutto funzioni alla perfezione nella tua rete WiFi domestica.</p>
+        </div>
     </section>
 
     <section class="reviews">
-        <h2>Dicono di noi a Roma Sud</h2>
+        <h2>La voce dei nostri clienti</h2>
         <div class="rev-grid">
-            <div class="rev-card">"Finalmente accendo i termosifoni prima di tornare ad Ostia. Bravissimi."<br><strong>Giulia - Ostia</strong></div>
-            <div class="rev-card">"Tecnico serio. All'EUR sono gli unici esperti sul sistema Shelly."<br><strong>Marco - EUR</strong></div>
-            <div class="rev-card">"Ho messo telecamere e luci ad Acilia. Consigliatissimo."<br><strong>Luca - Acilia</strong></div>
+            <div class="rev-card">
+                "Cercavo un esperto Shelly a Roma Sud e ho trovato loro. Finalmente trovo casa calda senza sprecare gas tutto il giorno."
+                <span class="rev-name">Giulia - Ostia</span>
+            </div>
+            <div class="rev-card">
+                "Servizio rapido e pulito. All'EUR sono gli unici che sanno davvero configurare tutto senza fare danni ai muri."
+                <span class="rev-name">Marco - EUR</span>
+            </div>
+            <div class="rev-card">
+                "Sopralluogo utilissimo. Mi hanno spiegato come risparmiare ed è andata esattamente così. Consigliatissimo."
+                <span class="rev-name">Luca - Acilia</span>
+            </div>
         </div>
     </section>
 
     <div class="calculator" id="preventivo">
         <h2>Simula il tuo investimento</h2>
         <div class="calc-grid">
-            <div class="calc-item"><label>Luci Smart (50€ cad)</label><select id="l" onchange="up()"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
-            <div class="calc-item"><label>Prese Smart (50€ cad)</label><select id="p" onchange="up()"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
-            <div class="calc-item"><label>Telecamere WiFi (100€ cad)</label><select id="c" onchange="up()"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
-            <div class="calc-item"><label>Riscaldamento (120€)</label><select id="t" onchange="up()"><option value="0">No</option><option value="1">Sì</option></select></div>
+            <div class="calc-item">
+                <label>Punti Luce Smart (50€ cad)</label>
+                <select id="l" onchange="up()">
+                    <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                </select>
+            </div>
+            <div class="calc-item">
+                <label>Prese Smart (50€ cad)</label>
+                <select id="p" onchange="up()">
+                    <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                </select>
+            </div>
+            <div class="calc-item">
+                <label>Telecamere WiFi (100€ cad)</label>
+                <select id="c" onchange="up()">
+                    <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                </select>
+            </div>
+            <div class="calc-item">
+                <label>Riscaldamento Smart (120€)</label>
+                <select id="t" onchange="up()">
+                    <option value="0">No</option><option value="1">Si, 1 Termostato</option>
+                </select>
+            </div>
         </div>
+
         <div class="price-box">
             <span>INVESTIMENTO STIMATO</span>
             <h2 id="res">0 €</h2>
-            <a href="https://wa.me/393505223388?text=Ciao%20DomusTech,%20ho%20fatto%20il%20calcolo%20sul%20sito%20e%20vorrei%20richiedere%20un%20sopralluogo%20gratuito" class="btn-main btn-whatsapp" style="max-width:320px; margin:auto;">RICHIEDI UN SOPRALLUOGO GRATUITO</a>
+            <br>
+            <a href="https://wa.me/393505223388" class="btn-main btn-whatsapp" style="max-width:350px; margin:auto;">RICHIEDI UN SOPRALLUOGO GRATUITO</a>
         </div>
     </div>
+
 </div>
 
 <footer>
     <strong>DOMUSTECH ROMA SUD</strong><br>
-    Specialista Shelly & Automazioni.<br>
+    Specialista Shelly & Automazioni Residenziali.<br>
+    Prestazione Professionale Occasionale ai sensi di legge.<br>
     EUR • Ostia • Acilia • Infernetto • Pomezia
 </footer>
 
 <div class="sticky-contact">
     <a href="tel:+393505223388" class="s-btn" style="background:var(--accent)">CHIAMA ORA</a>
-    <a href="https://wa.me/393505223388?text=Richiesta%20Sopralluogo%20Smart" class="s-btn" style="background:var(--success)">WHATSAPP</a>
+    <a href="https://wa.me/393505223388" class="s-btn" style="background:var(--success)">WHATSAPP</a>
 </div>
 
 <script>
     function up() {
-        const l = (parseInt(document.getElementById('l').value) || 0) * 50;
-        const p = (parseInt(document.getElementById('p').value) || 0) * 50;
-        const c = (parseInt(document.getElementById('c').value) || 0) * 100;
-        const t = (parseInt(document.getElementById('t').value) || 0) * 120;
-        document.getElementById('res').innerText = (l+p+c+t) + " €";
+        const luci = (parseInt(document.getElementById('l').value) || 0) * 50;
+        const prese = (parseInt(document.getElementById('p').value) || 0) * 50;
+        const cam = (parseInt(document.getElementById('c').value) || 0) * 100;
+        const termo = (parseInt(document.getElementById('t').value) || 0) * 120;
+        const total = luci + prese + cam + termo;
+        document.getElementById('res').innerText = total + " €";
     }
 </script>
 

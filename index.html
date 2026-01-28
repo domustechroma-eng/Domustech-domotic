@@ -201,4 +201,172 @@ window.open(url,"_blank");
 </script>
 
 </body>
+</html>.fixed-whatsapp{background:#25D366;}
+.fixed-call{background:#007BFF;}
+
+form{max-width:500px;margin:auto;}
+input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:8px;border:1px solid #ccc;font-size:16px;}
+button{width:100%;padding:15px;background:#ff9800;color:white;border:none;border-radius:40px;font-size:18px;font-weight:bold;}
+.result{font-size:20px;text-align:center;margin-top:10px;font-weight:bold;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Installatore Domotica Roma Sud</h1>
+<p>Shelly • Luci Smart • Prese WiFi • Termostati • Videosorveglianza</p>
+</header>
+
+<div class="hero">
+<img src="hero-shelly.jpg" alt="Domotica casa smart Roma">
+</div>
+
+<section>
+<h2>Rendi la tua casa smart in poche ore</h2>
+<p>Installazione professionale senza opere murarie. Controlla luci, prese e riscaldamento dal telefono.</p>
+
+<a class="btn whatsapp" href="https://wa.me/393505223388">WhatsApp Diretto</a>
+<a class="btn call" href="tel:+393505223388">Chiama il Tecnico</a>
+<a class="btn preventivo" href="#preventivo">Stima Costo Installazione</a>
+</section>
+
+<section>
+<h2>Servizi Domotica</h2>
+<div class="grid">
+<img src="installazione-shelly.jpg">
+<img src="configurazione-app.jpg">
+<img src="cablaggio-elettrico.jpg">
+<img src="hero-shelly.jpg">
+</div>
+<p>
+• Luci smart e scenari automatici<br>
+• Prese WiFi e monitoraggio consumi<br>
+• Termostati smart e riscaldamento remoto<br>
+• Automazioni casa e ufficio<br>
+• Videosorveglianza
+</p>
+</section>
+
+<section id="preventivo">
+<h2>Calcola Preventivo Smart Home</h2>
+
+<form onsubmit="calcolaPreventivo(); return false;">
+<input id="nome" placeholder="Il tuo nome" required>
+<input id="zona" placeholder="Zona (EUR, Ostia, Acilia...)" required>
+
+<select id="luci">
+<option value="0">Luci Smart (nessuna)</option>
+<option value="1">1-3 luci</option>
+<option value="2">4-10 luci</option>
+<option value="3">Più di 10 luci</option>
+</select>
+
+<select id="prese">
+<option value="0">Prese Smart (nessuna)</option>
+<option value="1">1-3 prese</option>
+<option value="2">4-10 prese</option>
+<option value="3">Più di 10 prese</option>
+</select>
+
+<select id="termostato">
+<option value="0">Termostato Smart (no)</option>
+<option value="1">1 termostato</option>
+<option value="2">2-3 termostati</option>
+</select>
+
+<select id="cam">
+<option value="0">Videosorveglianza (no)</option>
+<option value="1">1-2 telecamere</option>
+<option value="2">3-6 telecamere</option>
+</select>
+
+<button type="submit">Calcola Preventivo</button>
+</form>
+
+<div class="result" id="risultato"></div>
+<button onclick="scaricaPDF()" style="display:none" id="pdfBtn">Scarica Preventivo PDF</button>
+<button onclick="mandaWhatsApp()" style="display:none" id="waBtn">Invia Preventivo su WhatsApp</button>
+
+</section>
+
+<footer>
+DomusTech Roma • Installatore Domotica • 2026
+</footer>
+
+<div class="fixed-bar">
+<a class="fixed-whatsapp" href="https://wa.me/393505223388">WhatsApp</a>
+<a class="fixed-call" href="tel:+393505223388">Chiama</a>
+</div>
+
+<script>
+let totale=0;
+let dettagli="";
+
+function calcolaPreventivo(){
+let luci=document.getElementById("luci").value;
+let prese=document.getElementById("prese").value;
+let term=document.getElementById("termostato").value;
+let cam=document.getElementById("cam").value;
+
+totale=0;
+dettagli="";
+
+if(luci==1){totale+=150; dettagli+="Luci smart base\n";}
+if(luci==2){totale+=350; dettagli+="Luci smart medio\n";}
+if(luci==3){totale+=700; dettagli+="Luci smart avanzato\n";}
+
+if(prese==1){totale+=120; dettagli+="Prese smart base\n";}
+if(prese==2){totale+=300; dettagli+="Prese smart medio\n";}
+if(prese==3){totale+=600; dettagli+="Prese smart avanzato\n";}
+
+if(term==1){totale+=250; dettagli+="1 Termostato smart\n";}
+if(term==2){totale+=500; dettagli+="2-3 Termostati smart\n";}
+
+if(cam==1){totale+=400; dettagli+="Videosorveglianza base\n";}
+if(cam==2){totale+=900; dettagli+="Videosorveglianza avanzata\n";}
+
+document.getElementById("risultato").innerHTML="💰 Stima installazione: <b>"+totale+" €</b> (indicativo)";
+document.getElementById("pdfBtn").style.display="block";
+document.getElementById("waBtn").style.display="block";
+}
+
+function scaricaPDF(){
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+let nome=document.getElementById("nome").value;
+let zona=document.getElementById("zona").value;
+
+doc.setFontSize(18);
+doc.text("DomusTech Roma",20,20);
+doc.setFontSize(12);
+doc.text("Preventivo Domotica Smart Home",20,30);
+doc.text("Cliente: "+nome,20,40);
+doc.text("Zona: "+zona,20,50);
+
+doc.text("Dettagli installazione:",20,70);
+doc.text(dettagli,20,80);
+
+doc.setFontSize(16);
+doc.text("Totale stimato: "+totale+" EUR",20,120);
+
+doc.setFontSize(10);
+doc.text("Nota: Preventivo indicativo. Sopralluogo gratuito per conferma.",20,140);
+doc.text("Telefono: 3505223388  Email: domustech.roma@gmail.com",20,150);
+
+doc.save("preventivo_domotica_"+nome+".pdf");
+}
+
+function mandaWhatsApp(){
+let nome=document.getElementById("nome").value;
+let zona=document.getElementById("zona").value;
+let testo="Salve, sono "+nome+" (zona "+zona+"). Preventivo stimato: "+totale+" EUR. Dettagli: "+dettagli;
+let url="https://wa.me/393505223388?text="+encodeURIComponent(testo);
+window.open(url,"_blank");
+}
+</script>
+
+</body>
 </html>
+

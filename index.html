@@ -3,248 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DomusTech Roma | Installatore Domotica Roma Sud</title>
-
-<meta name="description" content="Installazione domotica a Roma Sud. Shelly, luci smart, prese WiFi, termostati, telecamere, serrande smart. Preventivo immediato.">
-<meta name="keywords" content="domotica roma, shelly roma, smart home roma, installatore domotica roma sud, luci smart roma, prese wifi roma">
+<title>Installatore Domotica Roma Sud | Shelly, Luci Smart, Telecamere</title>
+<meta name="description" content="Installazione professionale domotica Shelly, luci smart, prese WiFi, telecamere e termostati a Roma Sud. Preventivo immediato online.">
 
 <style>
-*{box-sizing:border-box;}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f4f7;color:#1a1a1a}
+body {margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#222;}
+header {background:#0b1f33;color:white;text-align:center;padding:40px 15px;}
+header h1 {margin:0;font-size:26px;}
+header p {opacity:0.9;font-size:16px;}
 
-header{
-background:linear-gradient(120deg,#0c1f33,#123b5f);
-color:#fff;
-padding:30px 15px;
-text-align:center;
+.hero img {width:100%;max-width:800px;border-radius:15px;margin-top:20px;}
+
+.btn-main {background:#25d366;color:white;padding:15px 25px;border-radius:40px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:20px;}
+.btn-main:hover {opacity:0.9;}
+
+section {padding:40px 15px;max-width:900px;margin:auto;}
+
+.cards {display:grid;grid-template-columns:1fr;gap:20px;}
+.card {background:white;border-radius:15px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+.card img {width:100%;border-radius:12px;margin-bottom:10px;}
+
+@media(min-width:700px){.cards{grid-template-columns:1fr 1fr;}}
+
+.fixed-whatsapp, .fixed-call {
+position:fixed;right:15px;z-index:9999;padding:15px;border-radius:50%;color:white;font-size:22px;text-align:center;width:55px;height:55px;display:flex;align-items:center;justify-content:center;
 }
+.fixed-whatsapp {bottom:80px;background:#25d366;}
+.fixed-call {bottom:15px;background:#007bff;}
 
-header h1{margin:0;font-size:28px}
-header p{margin-top:8px;opacity:.9}
+form {background:white;padding:25px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+input, select {width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;font-size:16px;}
+button {width:100%;padding:15px;background:#ff9800;color:white;border:none;border-radius:40px;font-size:18px;font-weight:bold;cursor:pointer;}
+button:hover {opacity:0.9;}
 
-.container{max-width:1000px;margin:auto;padding:20px}
+.result {font-size:22px;font-weight:bold;text-align:center;margin-top:15px;}
 
-.hero img{
-width:100%;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-.section{
-background:#fff;
-border-radius:16px;
-padding:25px;
-margin-top:25px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.section h2{text-align:center;margin-top:0}
-
-.cta{
-display:grid;
-gap:12px;
-margin-top:15px;
-}
-
-.btn{
-padding:15px;
-border:none;
-border-radius:40px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-width:100%;
-}
-
-.btn-whatsapp{background:#25D366;color:#fff}
-.btn-call{background:#007BFF;color:#fff}
-.btn-preventivo{background:#ff9800;color:#fff}
-
-select,input{
-width:100%;
-padding:10px;
-border-radius:10px;
-border:1px solid #ccc;
-font-size:16px;
-margin-top:5px;
-margin-bottom:10px;
-}
-
-.result{
-font-size:22px;
-font-weight:bold;
-text-align:center;
-margin-top:10px;
-color:#0c1f33;
-}
-
-.gallery{
-display:grid;
-gap:15px;
-margin-top:15px;
-}
-
-.gallery img{
-width:100%;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.gallery p{
-margin:5px 0 15px 0;
-font-size:15px;
-text-align:center;
-color:#333;
-}
-
-.reviews{
-display:grid;
-gap:12px;
-margin-top:15px;
-}
-
-.review{
-background:#f7f9fb;
-padding:15px;
-border-radius:10px;
-font-size:14px;
-}
-
-footer{
-margin-top:40px;
-background:#0c1f33;
-color:#fff;
-text-align:center;
-padding:15px;
-font-size:14px;
-}
+footer {text-align:center;padding:30px;font-size:13px;color:#777;background:#0b1f33;color:white;}
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- Pulsanti fissi -->
+<a class="fixed-whatsapp" href="https://wa.me/393505223388" target="_blank">💬</a>
+<a class="fixed-call" href="tel:+393505223388">📞</a>
+
+<header class="hero">
 <h1>Installatore Domotica Roma Sud</h1>
-<p>Shelly • Luci Smart • Prese WiFi • Termostati • Telecamere • Serrande Smart</p>
+<p>Shelly • Luci Smart • Prese WiFi • Termostati • Videosorveglianza</p>
+<img src="hero-shelly.jpg" alt="Domotica Roma Sud">
+<br>
+<a href="#preventivo" class="btn-main">📊 Calcola Preventivo</a>
 </header>
 
-<div class="container">
-
-<div class="hero">
-<img src="hero-shelly.jpg" alt="Domotica Roma Shelly">
-</div>
-
-<div class="section">
-<h2>Rendi la tua casa smart in poche ore</h2>
-<p style="text-align:center">
-Installazione professionale senza opere murarie.  
-Controlla luci, prese, serrande, sicurezza e riscaldamento direttamente dal tuo smartphone.
-</p>
-
-<div class="cta">
-<button class="btn btn-whatsapp" onclick="window.location.href='https://wa.me/393505223388'">💬 WhatsApp Diretto</button>
-<button class="btn btn-call" onclick="window.location.href='tel:+393505223388'">📞 Chiama il Tecnico</button>
-</div>
-</div>
-
-<div class="section">
-<h2>Preventivo Smart Immediato</h2>
-
-<label>Luci Smart (€50 cad.)</label>
-<select id="luci">
-<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
-</select>
-
-<label>Prese Smart (€50 cad.)</label>
-<select id="prese">
-<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
-</select>
-
-<label>Serrande Smart (€50 cad.)</label>
-<select id="serrande">
-<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
-</select>
-
-<label>Telecamere (€100 cad.)</label>
-<select id="camere">
-<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
-</select>
-
-<label>Termostato Smart (€120)</label>
-<select id="termostato">
-<option value="0">0</option><option value="1">1</option>
-</select>
-
-<button class="btn btn-preventivo" onclick="calcolaPreventivo()">Calcola Preventivo</button>
-
-<div class="result" id="risultato"></div>
-
-<button class="btn btn-call" onclick="generaPDF()">Scarica Preventivo PDF</button>
-</div>
-
-<div class="section">
-<h2>I nostri lavori</h2>
-
-<div class="gallery">
+<section>
+<h2>🔧 I Miei Servizi</h2>
+<div class="cards">
+<div class="card">
 <img src="installazione-shelly.jpg">
-<p>Installazione moduli Shelly su impianti esistenti</p>
+<h3>Moduli Shelly & Automazione</h3>
+<p>Installazione luci smart, prese WiFi e tapparelle controllabili da smartphone o voce.</p>
+</div>
 
+<div class="card">
 <img src="cablaggio-elettrico.jpg">
-<p>Cablaggi certificati e sicuri</p>
+<h3>Impianti Elettrici Professionali</h3>
+<p>Collegamenti sicuri e puliti, quadri elettrici ordinati e certificati.</p>
+</div>
 
+<div class="card">
 <img src="configurazione-app.jpg">
-<p>Configurazione app e controllo remoto</p>
+<h3>Configurazione App & Alexa</h3>
+<p>Configuro tutto sul tuo telefono e ti spiego come usarlo.</p>
 </div>
 
-<p style="text-align:center;margin-top:10px;">
-Ogni installazione viene progettata su misura per il cliente, con attenzione alla sicurezza, affidabilità e semplicità d’uso.
-</p>
+<div class="card">
+<img src="installazione-shelly.jpg">
+<h3>Telecamere WiFi</h3>
+<p>Installazione e configurazione videosorveglianza smart con accesso remoto.</p>
 </div>
+</div>
+</section>
 
-<div class="section">
-<h2>Recensioni clienti</h2>
-<div class="reviews">
-<div class="review">⭐⭐⭐⭐⭐ Servizio impeccabile, casa trasformata in smart home in un giorno.</div>
-<div class="review">⭐⭐⭐⭐⭐ Professionale, pulito, preciso. Consigliatissimo.</div>
-<div class="review">⭐⭐⭐⭐⭐ Installazione perfetta e app configurata in modo semplice.</div>
-</div>
-</div>
+<section>
+<h2>⭐ Perché scegliere me</h2>
+<p>✔ Tecnico locale Roma Sud<br>
+✔ Intervento rapido e pulito<br>
+✔ Spiegazione completa al cliente<br>
+✔ Supporto post installazione</p>
+</section>
 
-</div>
+<!-- PREVENTIVO PER ULTIMO -->
+<section id="preventivo">
+<h2>📊 Calcola il tuo Preventivo (Indicativo)</h2>
+
+<form onsubmit="event.preventDefault(); calcola();">
+<input type="text" id="nome" placeholder="Nome">
+<input type="text" id="cognome" placeholder="Cognome">
+
+<label>Luci Smart (1-6)</label>
+<select id="luci">
+<option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+</select>
+
+<label>Prese Smart (1-6)</label>
+<select id="prese">
+<option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+</select>
+
+<label>Serrande Smart (1-6)</label>
+<select id="serrande">
+<option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+</select>
+
+<label>Telecamere (100€ cad)</label>
+<select id="cam">
+<option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+</select>
+
+<label>Termostato Smart (120€)</label>
+<select id="termo">
+<option value="0">0</option><option>1</option>
+</select>
+
+<button>Calcola Preventivo</button>
+<div class="result" id="risultato"></div>
+</form>
+</section>
 
 <footer>
-DomusTech Roma • Installatore Domotica • Roma Sud • 2026
+DomusTech Roma • Installatore Domotica • 2026<br>
+Roma Sud: EUR, Ostia, Acilia, Infernetto, Casal Palocco
 </footer>
 
 <script>
-function calcolaPreventivo(){
-let luci = parseInt(document.getElementById("luci").value);
-let prese = parseInt(document.getElementById("prese").value);
-let serrande = parseInt(document.getElementById("serrande").value);
-let camere = parseInt(document.getElementById("camere").value);
-let termostato = parseInt(document.getElementById("termostato").value);
+function calcola(){
+let nome=document.getElementById("nome").value;
+let cognome=document.getElementById("cognome").value;
 
-let totale = (luci+prese+serrande)*50 + camere*100 + termostato*120;
+let luci=parseInt(document.getElementById("luci").value)*50;
+let prese=parseInt(document.getElementById("prese").value)*50;
+let serrande=parseInt(document.getElementById("serrande").value)*50;
+let cam=parseInt(document.getElementById("cam").value)*100;
+let termo=parseInt(document.getElementById("termo").value)*120;
 
-document.getElementById("risultato").innerHTML = "💰 Stima installazione: " + totale + " € (indicativo)";
-}
-
-function generaPDF(){
-let testo = document.getElementById("risultato").innerText;
-if(!testo){
-alert("Calcola prima il preventivo");
-return;
-}
-let win = window.open("", "_blank");
-win.document.write(`
-<h1>DomusTech Roma</h1>
-<p>${testo}</p>
-<p>Telefono: 350 522 3388</p>
-<p>Email: info@domustechroma.it</p>
-<p style="font-size:12px;">Stima indicativa non vincolante</p>
-`);
-win.print();
+let totale=luci+prese+serrande+cam+termo;
+document.getElementById("risultato").innerHTML=
+(nome+" "+cognome+"<br>Stima installazione: <b>"+totale+" €</b> (indicativo)");
 }
 </script>
 

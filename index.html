@@ -3,40 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Installatore Domotica Roma Sud</title>
+<title>DomusTech Domotica Roma Sud</title>
 
 <style>
-*{box-sizing:border-box;}
-body{margin:0;font-family:Arial;background:#f4f6f9;color:#222;}
-header{background:#0b1f33;color:white;text-align:center;padding:50px 15px;}
-header h1{font-size:28px;margin:0;}
-header p{opacity:.9}
-.btn-main{background:#ff9800;color:white;padding:14px 25px;border-radius:40px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:20px;}
+:root{--primary:#1a2a3a;--secondary:#25d366;--accent:#007bff;}
+body{margin:0;font-family:Arial;background:#f5f7fa;color:#333;}
+header{background:#1a2a3a;color:white;padding:25px;text-align:center;}
+header img{max-width:130px;margin-bottom:10px;}
+header h1{margin:0;font-size:28px;}
+header p{opacity:.9;font-size:16px;}
 
-section{padding:40px 15px;max-width:1000px;margin:auto;}
-h2{text-align:center;margin-bottom:20px;}
+.container{max-width:900px;margin:auto;padding:20px;}
+.hero{text-align:center;}
+.hero img{width:100%;max-width:700px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.3);}
 
-.cards{display:grid;grid-template-columns:1fr;gap:20px;}
-.card{background:white;border-radius:15px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,.08);}
-@media(min-width:700px){.cards{grid-template-columns:1fr 1fr;}}
+.btn{display:inline-block;padding:12px 24px;border-radius:30px;font-weight:bold;text-decoration:none;}
+.btn-main{background:#25d366;color:white;}
+
+.services{display:grid;gap:20px;margin-top:30px;}
+.card{background:white;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.1);overflow:hidden;}
+.card img{width:100%;height:220px;object-fit:cover;}
+.card div{padding:15px;}
+
+.review{background:white;padding:12px;border-radius:10px;margin:8px 0;box-shadow:0 3px 8px rgba(0,0,0,.1);}
+
+form{background:white;padding:20px;border-radius:14px;box-shadow:0 5px 15px rgba(0,0,0,.15);}
+input,select{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc;}
+button{width:100%;padding:12px;background:#ff9800;color:white;border:none;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;}
+.result{font-size:20px;text-align:center;margin-top:10px;font-weight:bold;}
 
 .fixed-whatsapp,.fixed-call{
-position:fixed;right:15px;z-index:9999;width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;font-size:26px;color:white;text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.4);
-}
+position:fixed;right:15px;width:60px;height:60px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;font-size:28px;
+color:white;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,.4);z-index:9999;}
 .fixed-whatsapp{bottom:90px;background:#25d366;}
 .fixed-call{bottom:15px;background:#007bff;}
 
-.review{background:white;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.08);margin-bottom:15px;}
-
-form{background:white;padding:25px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.08);}
-input,select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;font-size:16px;}
-button{width:100%;padding:14px;background:#ff9800;color:white;border:none;border-radius:40px;font-size:18px;font-weight:bold;cursor:pointer;}
-button:hover{opacity:.9;}
-.result{text-align:center;font-size:22px;font-weight:bold;margin-top:10px;}
-
-footer{text-align:center;background:#0b1f33;color:white;padding:25px;font-size:13px;}
+footer{text-align:center;padding:20px;background:#222;color:white;margin-top:40px;}
 </style>
 </head>
 
@@ -47,112 +50,108 @@ footer{text-align:center;background:#0b1f33;color:white;padding:25px;font-size:1
 <a class="fixed-call" href="tel:+393505223388">📞</a>
 
 <header>
-<h1>Installatore Domotica Roma Sud</h1>
-<p>Luci Smart • Prese WiFi • Termostati • Telecamere • Shelly</p>
-<a href="#preventivo" class="btn-main">👉 Calcola Preventivo</a>
+<img src="logo-domustech.png">
+<h1>Domotica e Sicurezza Roma Sud</h1>
+<p>Shelly • Luci Smart • Prese • Telecamere • Termostati</p>
 </header>
 
-<section>
-<h2>🔧 Servizi Professionali</h2>
-<div class="cards">
-<div class="card">Installazione moduli Shelly e domotica completa</div>
-<div class="card">Impianti elettrici ordinati e certificati</div>
-<div class="card">Configurazione Alexa, Google Home e App</div>
-<div class="card">Videosorveglianza WiFi e serrande smart</div>
+<div class="container">
+
+<div class="hero">
+<img src="hero-shelly.jpg">
+<br><br>
+<a href="#preventivo" class="btn btn-main">👉 Calcola Preventivo</a>
 </div>
-</section>
 
-<!-- RECENSIONI -->
-<section>
+<div class="services">
+<div class="card">
+<img src="installazione-shelly.jpg">
+<div><h3>⚡ Installazione Shelly</h3>Automazione luci e prese senza opere murarie.</div>
+</div>
+
+<div class="card">
+<img src="cablaggio-elettrico.jpg">
+<div><h3>🔧 Cablaggio Professionale</h3>Impianti sicuri e ordinati a regola d’arte.</div>
+</div>
+
+<div class="card">
+<img src="configurazione-app.jpg">
+<div><h3>📱 Configurazione App</h3>Alexa, Google Home e app Shelly.</div>
+</div>
+</div>
+
 <h2>⭐ Recensioni Clienti</h2>
+<div class="review">⭐⭐⭐⭐⭐ Tecnico serio e veloce - Marco (EUR)</div>
+<div class="review">⭐⭐⭐⭐⭐ Casa smart perfetta - Giulia (Ostia)</div>
+<div class="review">⭐⭐⭐⭐⭐ Consigliatissimo - Luca (Acilia)</div>
 
-<div class="review">⭐⭐⭐⭐⭐  
-“Tecnico bravissimo, mi ha fatto casa smart in una giornata. Consigliato!”  
-<br><b>— Marco, EUR</b></div>
+<!-- PREVENTIVO ALLA FINE -->
+<h2 id="preventivo">💰 Preventivo Automatico</h2>
 
-<div class="review">⭐⭐⭐⭐⭐  
-“Pulito, veloce e prezzi onesti. Finalmente uno serio.”  
-<br><b>— Giulia, Ostia</b></div>
-
-<div class="review">⭐⭐⭐⭐⭐  
-“Mi ha configurato tutto con Alexa e mi ha spiegato tutto.”  
-<br><b>— Luca, Acilia</b></div>
-
-</section>
-
-<!-- PREVENTIVO -->
-<section id="preventivo">
-<h2>📊 Preventivo Automatico (con PDF)</h2>
-
-<form onsubmit="event.preventDefault(); calcola();">
-
+<form id="formPreventivo">
 <input id="nome" placeholder="Nome">
 <input id="cognome" placeholder="Cognome">
 
 <label>Luci Smart (50€)</label>
-<select id="luci"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+<select id="luci"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
 
 <label>Prese Smart (50€)</label>
-<select id="prese"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+<select id="prese"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
 
 <label>Telecamere (100€)</label>
-<select id="camere"><option>0</option><option>1</option><option>2</option><option>3</option></select>
+<select id="cam"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
 
 <label>Termostato Smart (120€)</label>
-<select id="termostato"><option>0</option><option>1</option></select>
+<select id="termo"><option>0</option><option>1</option></select>
 
-<button type="submit">Calcola Preventivo</button>
-
+<button type="button" onclick="calcola()">Calcola Preventivo</button>
 <div class="result" id="totale"></div>
 
-<button type="button" onclick="scaricaPDF()">📄 Scarica PDF</button>
-
+<button type="button" onclick="generaPDF()">Scarica Preventivo PDF</button>
 </form>
-</section>
+
+</div>
 
 <footer>
-DomusTech Roma • EUR • Ostia • Acilia • Infernetto • Casal Palocco
+DomusTech Roma Sud • EUR • Ostia • Acilia • Infernetto
 </footer>
 
-<!-- PDF LIB -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-let prezzo=0;
-
 function calcola(){
-let luci=+luciEl().value;
-let prese=+preseEl().value;
-let camere=+camereEl().value;
-let term=+termEl().value;
-
-prezzo=luci*50 + prese*50 + camere*100 + term*120;
-document.getElementById("totale").innerHTML="💰 Totale stimato: "+prezzo+" €";
+let luci=+document.getElementById("luci").value;
+let prese=+document.getElementById("prese").value;
+let cam=+document.getElementById("cam").value;
+let termo=+document.getElementById("termo").value;
+let tot=luci*50 + prese*50 + cam*100 + termo*120;
+document.getElementById("totale").innerHTML="Totale stimato: "+tot+" €";
 }
 
-function luciEl(){return document.getElementById("luci");}
-function preseEl(){return document.getElementById("prese");}
-function camereEl(){return document.getElementById("camere");}
-function termEl(){return document.getElementById("termostato");}
+function generaPDF(){
+let nome=document.getElementById("nome").value || "";
+let cognome=document.getElementById("cognome").value || "";
+let luci=+luci.value, prese=+prese.value, cam=+cam.value, termo=+termo.value;
+let tot=luci*50 + prese*50 + cam*100 + termo*120;
 
-function scaricaPDF(){
-if(prezzo==0){alert("Calcola prima il preventivo");return;}
-const { jsPDF } = window.jspdf;
-let doc = new jsPDF();
+let contenuto = `
+<div style="font-family:Arial;padding:20px">
+<img src='logo-domustech.png' style='width:150px'><br><br>
+<h2>Preventivo DomusTech</h2>
+<p><b>Cliente:</b> ${nome} ${cognome}</p>
+<hr>
+<p>Luci Smart: ${luci}</p>
+<p>Prese Smart: ${prese}</p>
+<p>Telecamere: ${cam}</p>
+<p>Termostato: ${termo}</p>
+<h2>Totale stimato: ${tot} €</h2>
+<p>Preventivo indicativo non vincolante</p>
+</div>
+`;
 
-let nome=document.getElementById("nome").value;
-let cognome=document.getElementById("cognome").value;
-
-doc.text("Preventivo Domotica DomusTech Roma",20,20);
-doc.text("Cliente: "+nome+" "+cognome,20,35);
-doc.text("Luci: "+luciEl().value,20,50);
-doc.text("Prese: "+preseEl().value,20,60);
-doc.text("Telecamere: "+camereEl().value,20,70);
-doc.text("Termostato: "+termEl().value,20,80);
-doc.text("Totale stimato: "+prezzo+" EUR",20,100);
-doc.text("Valido 30 giorni - Preventivo indicativo",20,120);
-
-doc.save("preventivo-domotica.pdf");
+let div=document.createElement("div");
+div.innerHTML=contenuto;
+html2pdf().from(div).save("preventivo-domustech.pdf");
 }
 </script>
 

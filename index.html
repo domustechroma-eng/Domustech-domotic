@@ -3,157 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DomusTech Domotica Roma Sud</title>
+<title>DomusTech - Domotica Roma Sud</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-:root{--primary:#1a2a3a;--secondary:#25d366;--accent:#007bff;}
-body{margin:0;font-family:Arial;background:#f5f7fa;color:#333;}
-header{background:#1a2a3a;color:white;padding:25px;text-align:center;}
-header img{max-width:130px;margin-bottom:10px;}
-header h1{margin:0;font-size:28px;}
-header p{opacity:.9;font-size:16px;}
+    :root {
+        --primary: #1F4E79; /* Blu dal tuo logo */
+        --accent: #E88C30;  /* Arancio dal tuo logo */
+        --light: #F4F7F6;
+        --dark: #1a2a3a;
+        --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
-.container{max-width:900px;margin:auto;padding:20px;}
-.hero{text-align:center;}
-.hero img{width:100%;max-width:700px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.3);}
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+    
+    /* Header */
+    header { background: #fff; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; }
+    header img { max-height: 50px; }
+    .header-cta { background: var(--accent); color: white; text-decoration: none; padding: 8px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; }
 
-.btn{display:inline-block;padding:12px 24px;border-radius:30px;font-weight:bold;text-decoration:none;}
-.btn-main{background:#25d366;color:white;}
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(rgba(31, 78, 121, 0.8), rgba(31, 78, 121, 0.6)), url('415.jpg'); /* Tua immagine 415 */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 10px; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
+    .btn-hero { background: var(--accent); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 15px rgba(232, 140, 48, 0.4); transition: transform 0.2s; }
+    .btn-hero:hover { transform: translateY(-3px); }
 
-.services{display:grid;gap:20px;margin-top:30px;}
-.card{background:white;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.1);overflow:hidden;}
-.card img{width:100%;height:220px;object-fit:cover;}
-.card div{padding:15px;}
+    /* Container */
+    .container { max-width: 900px; margin: auto; padding: 40px 20px; }
 
-.review{background:white;padding:12px;border-radius:10px;margin:8px 0;box-shadow:0 3px 8px rgba(0,0,0,.1);}
+    /* Servizi Grid */
+    .section-title { text-align: center; margin-bottom: 30px; color: var(--primary); }
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .card h3 { margin: 0 0 10px; color: var(--primary); font-size: 1.2rem; }
+    .card p { margin: 0; font-size: 0.9rem; color: #666; }
 
-form{background:white;padding:20px;border-radius:14px;box-shadow:0 5px 15px rgba(0,0,0,.15);}
-input,select{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc;}
-button{width:100%;padding:12px;background:#ff9800;color:white;border:none;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;}
-.result{font-size:20px;text-align:center;margin-top:10px;font-weight:bold;}
+    /* Preventivatore */
+    .calculator { background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); border-top: 5px solid var(--accent); margin-top: 40px; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary); display: flex; justify-content: space-between; }
+    label span { color: var(--accent); }
+    
+    input, select { width: 100%; padding: 12px; border: 2px solid #e1e5e8; border-radius: 10px; font-size: 16px; font-family: 'Poppins', sans-serif; transition: 0.3s; }
+    input:focus, select:focus { border-color: var(--primary); outline: none; }
 
-.fixed-whatsapp,.fixed-call{
-position:fixed;right:15px;width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;font-size:28px;
-color:white;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,.4);z-index:9999;}
-.fixed-whatsapp{bottom:90px;background:#25d366;}
-.fixed-call{bottom:15px;background:#007bff;}
+    .total-box { background: var(--primary); color: white; padding: 20px; border-radius: 15px; text-align: center; margin: 20px 0; }
+    .total-price { font-size: 2.5rem; font-weight: 700; display: block; }
+    .total-sub { font-size: 0.8rem; opacity: 0.8; }
 
-footer{text-align:center;padding:20px;background:#222;color:white;margin-top:40px;}
+    .btn-pdf { width: 100%; padding: 15px; background: #333; color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .btn-pdf:hover { background: #000; }
+
+    /* Floating Buttons */
+    .floating-btn { position: fixed; right: 20px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 99; transition: transform 0.3s; }
+    .floating-btn:hover { transform: scale(1.1); }
+    .whatsapp { bottom: 90px; background: #25D366; }
+    .phone { bottom: 20px; background: #007bff; }
+
+    /* Footer */
+    footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; border-top: 1px solid #ddd; margin-top: 50px; }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+        .hero h1 { font-size: 1.8rem; }
+    }
 </style>
 </head>
-
 <body>
 
-<!-- Pulsanti fissi -->
-<a class="fixed-whatsapp" href="https://wa.me/393505223388" target="_blank">💬</a>
-<a class="fixed-call" href="tel:+393505223388">📞</a>
-
 <header>
-<img src="logo-domustech.png">
-<h1>Domotica e Sicurezza Roma Sud</h1>
-<p>Shelly • Luci Smart • Prese • Telecamere • Termostati</p>
+    <img src="433.png" alt="DomusTech Logo">
+    <a href="tel:+393505223388" class="header-cta">📞 Chiama Ora</a>
 </header>
+
+<div class="hero">
+    <h1>La Tua Casa Smart,<br>Senza Lavori Murari.</h1>
+    <p>Installazione professionale Shelly a Roma Sud. Controllo luci, tapparelle e consumi direttamente dal tuo smartphone.</p>
+    <a href="#preventivo" class="btn-hero">Calcola Preventivo Gratis</a>
+</div>
 
 <div class="container">
 
-<div class="hero">
-<img src="hero-shelly.jpg">
-<br><br>
-<a href="#preventivo" class="btn btn-main">👉 Calcola Preventivo</a>
-</div>
+    <h2 class="section-title">Cosa possiamo fare per te?</h2>
+    <div class="services">
+        <div class="card">
+            <img src="414.jpg" alt="Installazione Shelly">
+            <div class="card-body">
+                <h3>Installazione Invisibile</h3>
+                <p>Moduli Shelly installati dietro i tuoi interruttori attuali. Nessuna traccia nel muro, zero polvere.</p>
+            </div>
+        </div>
 
-<div class="services">
-<div class="card">
-<img src="installazione-shelly.jpg">
-<div><h3>⚡ Installazione Shelly</h3>Automazione luci e prese senza opere murarie.</div>
-</div>
+        <div class="card">
+            <img src="412.jpg" alt="Configurazione App">
+            <div class="card-body">
+                <h3>Configurazione App</h3>
+                <p>Tutta la casa in un'unica app. Integrazione con Alexa, Google Home e scenari personalizzati.</p>
+            </div>
+        </div>
 
-<div class="card">
-<img src="cablaggio-elettrico.jpg">
-<div><h3>🔧 Cablaggio Professionale</h3>Impianti sicuri e ordinati a regola d’arte.</div>
-</div>
+        <div class="card">
+            <img src="413.jpg" alt="Assistenza">
+            <div class="card-body">
+                <h3>Assistenza Dedicata</h3>
+                <p>Interventi rapidi in zona EUR, Ostia, Acilia, Infernetto. Supporto post-installazione.</p>
+            </div>
+        </div>
+    </div>
 
-<div class="card">
-<img src="configurazione-app.jpg">
-<div><h3>📱 Configurazione App</h3>Alexa, Google Home e app Shelly.</div>
-</div>
-</div>
+    <div class="calculator" id="preventivo">
+        <h2 style="text-align:center; color:var(--primary)">💰 Crea il tuo Preventivo</h2>
+        <p style="text-align:center; font-size:0.9rem; margin-bottom:20px;">Seleziona i dispositivi che vuoi rendere Smart. Il prezzo è indicativo.</p>
 
-<h2>⭐ Recensioni Clienti</h2>
-<div class="review">⭐⭐⭐⭐⭐ Tecnico serio e veloce - Marco (EUR)</div>
-<div class="review">⭐⭐⭐⭐⭐ Casa smart perfetta - Giulia (Ostia)</div>
-<div class="review">⭐⭐⭐⭐⭐ Consigliatissimo - Luca (Acilia)</div>
+        <form id="quoteForm">
+            <div class="form-group">
+                <input type="text" id="nome" placeholder="Il tuo Nome e Cognome" required>
+            </div>
 
-<!-- PREVENTIVO ALLA FINE -->
-<h2 id="preventivo">💰 Preventivo Automatico</h2>
+            <div class="form-group">
+                <label>Punti Luce Smart <span>50€ / cad</span></label>
+                <select id="luci" onchange="calcolaTotale()">
+                    <option value="0">Nessuno</option>
+                    <option value="1">1 Punto Luce</option>
+                    <option value="2">2 Punti Luce</option>
+                    <option value="3">3 Punti Luce</option>
+                    <option value="4">4 Punti Luce</option>
+                    <option value="5">5 Punti Luce</option>
+                    <option value="6">6 Punti Luce</option>
+                    <option value="10">Casa Completa (10+)</option>
+                </select>
+            </div>
 
-<form id="formPreventivo">
-<input id="nome" placeholder="Nome">
-<input id="cognome" placeholder="Cognome">
+            <div class="form-group">
+                <label>Prese/Elettrodomestici Smart <span>50€ / cad</span></label>
+                <select id="prese" onchange="calcolaTotale()">
+                    <option value="0">Nessuna</option>
+                    <option value="1">1 Presa</option>
+                    <option value="2">2 Prese</option>
+                    <option value="3">3 Prese</option>
+                    <option value="4">4 Prese</option>
+                </select>
+            </div>
 
-<label>Luci Smart (50€)</label>
-<select id="luci"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
-
-<label>Prese Smart (50€)</label>
-<select id="prese"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
-
-<label>Telecamere (100€)</label>
-<select id="cam"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
-
-<label>Termostato Smart (120€)</label>
-<select id="termo"><option>0</option><option>1</option></select>
-
-<button type="button" onclick="calcola()">Calcola Preventivo</button>
-<div class="result" id="totale"></div>
-
-<button type="button" onclick="generaPDF()">Scarica Preventivo PDF</button>
-</form>
-
-</div>
-
-<footer>
-DomusTech Roma Sud • EUR • Ostia • Acilia • Infernetto
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<script>
-function calcola(){
-let luci=+document.getElementById("luci").value;
-let prese=+document.getElementById("prese").value;
-let cam=+document.getElementById("cam").value;
-let termo=+document.getElementById("termo").value;
-let tot=luci*50 + prese*50 + cam*100 + termo*120;
-document.getElementById("totale").innerHTML="Totale stimato: "+tot+" €";
-}
-
-function generaPDF(){
-let nome=document.getElementById("nome").value || "";
-let cognome=document.getElementById("cognome").value || "";
-let luci=+luci.value, prese=+prese.value, cam=+cam.value, termo=+termo.value;
-let tot=luci*50 + prese*50 + cam*100 + termo*120;
-
-let contenuto = `
-<div style="font-family:Arial;padding:20px">
-<img src='logo-domustech.png' style='width:150px'><br><br>
-<h2>Preventivo DomusTech</h2>
-<p><b>Cliente:</b> ${nome} ${cognome}</p>
-<hr>
-<p>Luci Smart: ${luci}</p>
-<p>Prese Smart: ${prese}</p>
-<p>Telecamere: ${cam}</p>
-<p>Termostato: ${termo}</p>
-<h2>Totale stimato: ${tot} €</h2>
-<p>Preventivo indicativo non vincolante</p>
-</div>
-`;
-
-let div=document.createElement("div");
-div.innerHTML=contenuto;
-html2pdf().from(div).save("preventivo-domustech.pdf");
-}
-</script>
-
-</body>
-</html>
+            <div class="form-group">
+                <label>Controllo Tapparelle <span>60€ / cad</span></label>
+                <select id="tapparelle" onchange="calcolaTotale()">

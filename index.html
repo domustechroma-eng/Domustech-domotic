@@ -2,10 +2,8 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DomusTech - Esperti Domotica Shelly Roma Sud</title>
-    
-    <meta name="description" content="Trasforma la tua casa in una Smart Home a Roma Sud. Installazione Shelly senza lavori murari. Preventivo immediato e assistenza professionale.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomusTech - Smart Home Roma Sud</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     
@@ -13,276 +11,234 @@
 
     <style>
         :root {
-            --primary: #0A2540; /* Blu Profondo (Autorità) */
-            --accent: #FF6B00;  /* Arancio Neon (Conversione) */
+            --primary: #0A2540; 
+            --accent: #FF6B00;  
             --whatsapp: #25D366;
-            --bg-light: #F6F9FC;
             --white: #ffffff;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; font-family: 'Inter', sans-serif; color: #425466; background: var(--bg-light); line-height: 1.6; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Inter', sans-serif; color: #425466; background: #f4f7f9; }
 
-        /* Header */
-        header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        header img { height: 50px; }
-        .nav-call { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 14px; border: 2px solid var(--primary); padding: 8px 15px; border-radius: 8px; }
+        /* HEADER */
+        header { background: var(--white); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top:0; z-index:1000; }
+        header img { height: 45px; }
 
-        /* Hero: L'impatto ADS */
+        /* HERO - OTTIMIZZATA PER VISIBILITÀ FOTO */
         .hero { 
-            background: linear-gradient(135deg, rgba(10,37,64,0.95) 0%, rgba(10,37,64,0.8) 100%), url('hero-shelly.jpg');
-            background-size: cover; background-position: center;
-            color: var(--white); padding: 80px 20px; text-align: center;
+            position: relative;
+            min-height: 500px;
+            background: url('hero-shelly.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
-        .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin: 0 0 20px; text-transform: tight; }
+        /* Overlay più leggero per far vedere meglio la foto */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 37, 64, 0.5); 
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+        }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin: 0 0 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         .hero h1 span { color: var(--accent); }
-        .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
-
-        /* Pulsanti d'oro */
-        .cta-container { display: flex; flex-direction: column; gap: 15px; max-width: 350px; margin: 0 auto; }
-        .btn-big { padding: 20px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .btn-wa { background: var(--whatsapp); color: #fff; }
-        .btn-accent { background: var(--accent); color: #fff; }
-        .btn-big:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0,0,0,0.3); }
+        
+        .hero-cta { display: flex; flex-direction: column; gap: 15px; max-width: 320px; margin: 30px auto 0; }
+        .btn-hero { padding: 18px; border-radius: 50px; text-decoration: none; font-weight: 800; text-align: center; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .btn-hero-wa { background: var(--whatsapp); color: white; }
+        .btn-hero-calc { background: var(--accent); color: white; }
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        /* Punti di Forza */
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: -40px; }
-        .feat-item { background: var(--white); padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-size: 0.8rem; font-weight: 700; color: var(--primary); }
+        /* SERVIZI */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-body { padding: 20px; }
 
-        /* Cards Servizi */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 50px 0; }
-        .card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 25px; }
-        .card h3 { margin: 0 0 10px; color: var(--primary); }
+        /* RECENSIONI - AGGIUNTE E OTTIMIZZATE */
+        .reviews { background: var(--primary); color: white; padding: 60px 20px; border-radius: 20px; margin: 40px 0; }
+        .rev-item { border-left: 3px solid var(--accent); padding-left: 20px; margin-bottom: 30px; }
+        .stars { color: var(--accent); margin-bottom: 5px; display: block; }
 
-        /* Recensioni */
-        .reviews-box { background: var(--primary); color: #fff; padding: 60px 20px; border-radius: 30px; margin: 40px 0; }
-        .rev { border-left: 3px solid var(--accent); padding-left: 20px; margin-bottom: 30px; }
-        .stars { color: var(--accent); font-size: 1.2rem; }
-
-        /* Calcolatore */
-        .calc-wrapper { background: var(--white); padding: 40px 25px; border-radius: 25px; border: 3px solid var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .calc-wrapper h2 { text-align: center; color: var(--primary); margin-top: 0; }
+        /* PREVENTIVATORE - IL FORM CHE TI PIACE */
+        .calc-section { background: white; padding: 40px 25px; border-radius: 20px; border: 2px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-        label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 5px; color: #555; }
-        input, select { width: 100%; padding: 15px; border: 1px solid #E1E8EE; border-radius: 12px; font-size: 1rem; background: #F9FBFF; }
+        label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; }
         
-        .live-price { background: #F1F4F8; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0; }
-        .live-price h2 { font-size: 3rem; margin: 0; color: var(--primary); }
-        .btn-pdf-final { background: #1a1a1a; color: #fff; width: 100%; padding: 20px; border-radius: 12px; border: none; font-weight: 800; cursor: pointer; font-size: 1.1rem; }
+        .total-box { background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center; margin: 25px 0; border: 2px dashed var(--primary); }
+        .total-box h2 { font-size: 2.8rem; margin: 0; color: var(--primary); }
+        
+        .btn-pdf { width: 100%; padding: 20px; background: #222; color: white; border: none; border-radius: 10px; font-weight: 800; font-size: 1.1rem; cursor: pointer; }
 
-        /* Sticky Bar Mobile */
-        .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); display: flex; padding: 10px; gap: 10px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 2000; }
-        .sticky-btn { flex: 1; padding: 15px; border-radius: 12px; text-decoration: none; text-align: center; color: #fff; font-weight: 800; font-size: 0.9rem; }
+        /* STICKY MOBILE BAR */
+        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: white; display: flex; padding: 10px; gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.1); z-index: 2000; }
+        .s-btn { flex: 1; padding: 15px; text-align: center; border-radius: 10px; color: white; text-decoration: none; font-weight: 800; font-size: 0.9rem; }
 
         footer { text-align: center; padding: 40px 20px 120px; font-size: 0.8rem; color: #888; }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+        @media (max-width: 600px) {
             .form-row { grid-template-columns: 1fr; }
-            .features { grid-template-columns: 1fr; margin-top: 20px; }
-            .hero { padding: 40px 20px; }
+            .hero h1 { font-size: 1.8rem; }
         }
-        @media (min-width: 769px) { .sticky-bar { display: none; } }
+        @media (min-width: 601px) { .sticky-bar { display: none; } }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo-domustech.png" alt="DomusTech">
-    <a href="tel:+393505223388" class="nav-call">CHIAMA IL TECNICO</a>
+    <img src="logo-domustech.png" alt="Logo DomusTech">
+    <a href="tel:+393505223388" style="text-decoration:none; color:var(--primary); font-weight:800;">📞 350 522 3388</a>
 </header>
 
 <section class="hero">
-    <h1>Casa Intelligente <span>Senza Opere Murarie</span></h1>
-    <p>Installatore specializzato Shelly a Roma Sud. Controllo Luci, Clima e Sicurezza in un pomeriggio.</p>
-    
-    <div class="cta-container">
-        <a href="https://wa.me/393505223388" class="btn-big btn-wa">PARLA SU WHATSAPP</a>
-        <a href="#preventivo" class="btn-big btn-accent">VAI AL PREVENTIVO</a>
+    <div class="hero-content">
+        <h1>La Tua Casa <span>Smart</span><br>Senza Lavori Murari</h1>
+        <p>Specialista Shelly a Roma Sud. Installazione rapida e pulita.</p>
+        <div class="hero-cta">
+            <a href="https://wa.me/393505223388" class="btn-hero btn-hero-wa">WHATSAPP DIRETTO</a>
+            <a href="#preventivo" class="btn-hero btn-hero-calc">CALCOLA PREVENTIVO</a>
+        </div>
     </div>
 </section>
 
 <div class="container">
-    <div class="features">
-        <div class="feat-item">⚡ INSTALLAZIONE IN 2 ORE</div>
-        <div class="feat-item">📍 ROMA SUD & LITORALE</div>
-        <div class="feat-item">🛡️ GARANZIA TOTALE</div>
-    </div>
-
+    
     <div class="grid">
         <div class="card">
             <img src="installazione-shelly.jpg" alt="Shelly">
-            <div class="card-body">
-                <h3>Domotica Invisibile</h3>
-                <p>Rendi smart i tuoi interruttori attuali. Comanda luci e tapparelle con la voce o con l'app.</p>
-            </div>
+            <div class="card-body"><h3>Domotica Invisibile</h3><p>Rendiamo smart i tuoi attuali interruttori.</p></div>
         </div>
         <div class="card">
             <img src="cablaggio-elettrico.jpg" alt="Cablaggio">
-            <div class="card-body">
-                <h3>Impianti & Sicurezza</h3>
-                <p>Riparazioni elettriche certificate e installazione telecamere WiFi ad alta risoluzione.</p>
-            </div>
+            <div class="card-body"><h3>Sicurezza Elettrica</h3><p>Riparazioni e cablaggi certificati.</p></div>
         </div>
         <div class="card">
             <img src="configurazione-app.jpg" alt="App">
-            <div class="card-body">
-                <h3>Termostati Smart</h3>
-                <p>Gestisci il riscaldamento dal cellulare e risparmia fino al 30% sulla bolletta.</p>
-            </div>
+            <div class="card-body"><h3>Termostati WiFi</h3><p>Gestisci il clima dal tuo smartphone.</p></div>
         </div>
     </div>
 
-    <div class="reviews-box">
-        <h2 style="text-align:center; margin-bottom:40px;">Cosa dicono i nostri clienti</h2>
-        <div class="rev">
-            <div class="stars">★★★★★</div>
-            <p>"Professionale e pulito. Finalmente ho la casa che sognavo senza aver rotto un solo muro."</p>
-            <strong>Marco - EUR</strong>
+    <div class="reviews">
+        <h2 style="text-align:center; margin-bottom:40px;">Recensioni Verificate</h2>
+        <div class="rev-item">
+            <span class="stars">★★★★★</span>
+            <p>"Tecnico eccellente all'EUR. Casa smart in un pomeriggio."</p>
+            <strong>Marco (EUR)</strong>
         </div>
-        <div class="rev">
-            <div class="stars">★★★★★</div>
-            <p>"Il preventivo online è stato precisissimo. Lavoro eseguito a regola d'arte ad Ostia."</p>
-            <strong>Giulia - Ostia</strong>
+        <div class="rev-item">
+            <span class="stars">★★★★★</span>
+            <p>"Finalmente accendo i termosifoni prima di tornare ad Ostia. Bravissimo."</p>
+            <strong>Giulia (Ostia)</strong>
+        </div>
+        <div class="rev-item">
+            <span class="stars">★★★★★</span>
+            <p>"Senza fare un buco ha sistemato tutto ad Acilia. Molto serio."</p>
+            <strong>Luca (Acilia)</strong>
         </div>
     </div>
 
-    <div class="calc-wrapper" id="preventivo">
-        <h2>Richiedi il tuo Preventivo Formale</h2>
+    <div class="calc-section" id="preventivo">
+        <h2>Genera il tuo Preventivo PDF</h2>
         <div class="form-row">
-            <div>
-                <label>Nome e Cognome</label>
-                <input type="text" id="pdf_client" placeholder="Mario Rossi">
-            </div>
-            <div>
-                <label>Zona (es. EUR, Ostia...)</label>
-                <input type="text" id="pdf_zona" placeholder="Acilia">
-            </div>
+            <div><label>Nome e Cognome</label><input type="text" id="c_nome" placeholder="Mario Rossi"></div>
+            <div><label>Zona di Roma</label><input type="text" id="c_zona" placeholder="es. Ostia"></div>
         </div>
-
         <div class="form-row">
-            <div>
-                <label>Luci Smart (50€ cad.)</label>
-                <select id="sel_luci" onchange="calc()">
-                    <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
-                </select>
-            </div>
-            <div>
-                <label>Prese Smart (50€ cad.)</label>
-                <select id="sel_prese" onchange="calc()">
-                    <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                </select>
-            </div>
+            <div><label>Luci Smart (50€ cad)</label><select id="n_luci" onchange="up()"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+            <div><label>Prese Smart (50€ cad)</label><select id="n_prese" onchange="up()"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
         </div>
-
         <div class="form-row">
-            <div>
-                <label>Telecamere (100€ cad.)</label>
-                <select id="sel_cam" onchange="calc()">
-                    <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                </select>
-            </div>
-            <div>
-                <label>Termostato WiFi (120€)</label>
-                <select id="sel_termo" onchange="calc()">
-                    <option value="0">No</option><option value="1">Si</option>
-                </select>
-            </div>
+            <div><label>Telecamere (100€ cad)</label><select id="n_cam" onchange="up()"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div>
+            <div><label>Termostato (120€)</label><select id="n_termo" onchange="up()"><option value="0">No</option><option value="1">Sì</option></select></div>
         </div>
 
-        <div class="live-price">
-            <span style="font-weight:800; letter-spacing:1px; color:#888;">INVESTIMENTO STIMATO</span>
-            <h2 id="final_price">0 €</h2>
+        <div class="total-box">
+            <span>INVESTIMENTO STIMATO</span>
+            <h2 id="display_tot">0 €</h2>
         </div>
 
-        <button class="btn-pdf-final" onclick="downloadQuote()">SCARICA PREVENTIVO PDF</button>
+        <button class="btn-pdf" onclick="makePDF()">SCARICA IL TUO PREVENTIVO (PDF)</button>
     </div>
+
+</div>
+
+<div class="sticky-bar">
+    <a href="tel:+393505223388" class="s-btn" style="background:var(--accent)">CHIAMA ORA</a>
+    <a href="https://wa.me/393505223388" class="s-btn" style="background:var(--whatsapp)">WHATSAPP</a>
 </div>
 
 <footer>
-    <strong>DOMUSTECH ROMA SUD</strong><br>
-    Specialista in Automazione Residenziale Shelly.<br>
-    Prestazione Professionale Occasionale.
+    <strong>DomusTech Roma Sud</strong><br>
+    Prestazione Professionale Occasionale.<br>
+    Zona EUR - Ostia - Acilia - Infernetto
 </footer>
 
-<div class="sticky-bar">
-    <a href="tel:+393505223388" class="sticky-btn" style="background:var(--accent)">CHIAMA ORA</a>
-    <a href="https://wa.me/393505223388" class="sticky-btn" style="background:var(--whatsapp)">WHATSAPP</a>
-</div>
-
 <script>
-    function calc() {
-        const l = parseInt(document.getElementById('sel_luci').value) * 50;
-        const p = parseInt(document.getElementById('sel_prese').value) * 50;
-        const c = parseInt(document.getElementById('sel_cam').value) * 100;
-        const t = parseInt(document.getElementById('sel_termo').value) * 120;
+    function up() {
+        const l = (parseInt(document.getElementById('n_luci').value) || 0) * 50;
+        const p = (parseInt(document.getElementById('n_prese').value) || 0) * 50;
+        const c = (parseInt(document.getElementById('n_cam').value) || 0) * 100;
+        const t = (parseInt(document.getElementById('n_termo').value) || 0) * 120;
         const total = l + p + c + t;
-        document.getElementById('final_price').innerText = total + " €";
+        document.getElementById('display_tot').innerText = total + " €";
         return total;
     }
 
-    function downloadQuote() {
-        const name = document.getElementById('pdf_client').value;
-        const zona = document.getElementById('pdf_zona').value;
-        
-        if(!name) { alert("Per favore inserisci il tuo nome."); return; }
+    async function makePDF() {
+        const nome = document.getElementById('c_nome').value;
+        if(!nome) { alert("Inserisci il tuo nome!"); return; }
 
-        const price = calc();
+        const total = up();
         const date = new Date().toLocaleDateString('it-IT');
-
-        const pdfHtml = `
-            <div style="font-family: 'Inter', sans-serif; padding: 40px; color: #0A2540;">
-                <div style="display: flex; justify-content: space-between; border-bottom: 4px solid #FF6B00; padding-bottom: 20px;">
-                    <img src="logo-domustech.png" style="height: 60px;">
-                    <div style="text-align: right;">
-                        <h1 style="margin:0; font-size: 24px;">PROPOSTA TECNICA</h1>
-                        <p style="margin:0;">Data: ${date}</p>
-                    </div>
-                </div>
-
-                <div style="margin: 40px 0;">
-                    <p><strong>Spett.le Cliente:</strong> ${name}</p>
-                    <p><strong>Località:</strong> ${zona}</p>
-                </div>
-
-                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-                    <thead>
-                        <tr style="background: #0A2540; color: #fff; text-align: left;">
-                            <th style="padding: 15px;">Servizio Richiesto</th>
-                            <th style="padding: 15px; text-align: center;">Quantità</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">Configurazione Punti Luce Smart</td><td style="padding: 15px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('sel_luci').value}</td></tr>
-                        <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">Automazione Prese e Carichi</td><td style="padding: 15px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('sel_prese').value}</td></tr>
-                        <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">Kit Telecamere WiFi Sicurezza</td><td style="padding: 15px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('sel_cam').value}</td></tr>
-                        <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">Termostato Intelligente (App)</td><td style="padding: 15px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('sel_termo').value == '1' ? 'SÌ' : 'NO'}</td></tr>
-                    </tbody>
+        
+        // Creiamo il template HTML per il PDF
+        const template = `
+            <div style="font-family: Arial; padding: 40px; color: #0A2540;">
+                <table style="width: 100%; border-bottom: 3px solid #FF6B00; padding-bottom: 20px;">
+                    <tr>
+                        <td><img src="logo-domustech.png" style="height: 60px;"></td>
+                        <td style="text-align: right;"><h2>PREVENTIVO SMART HOME</h2><p>Data: ${date}</p></td>
+                    </tr>
                 </table>
-
-                <div style="margin-top: 50px; background: #F6F9FC; padding: 30px; border-radius: 15px; text-align: right;">
-                    <p style="margin:0; font-weight: 700; color: #888;">INVESTIMENTO TOTALE STIMATO</p>
-                    <h1 style="margin:0; color: #FF6B00; font-size: 40px;">${price} €</h1>
-                </div>
-
-                <div style="margin-top: 60px; font-size: 12px; color: #666; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
-                    DomusTech Roma Sud | WhatsApp: 350 522 3388 | www.domustech-roma.it
+                <p style="margin-top:30px;"><strong>Cliente:</strong> ${nome}</p>
+                <p><strong>Zona:</strong> ${document.getElementById('c_zona').value || 'Roma'}</p>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <tr style="background: #0A2540; color: white; text-align: left;">
+                        <th style="padding: 10px;">Descrizione</th>
+                        <th style="padding: 10px; text-align: center;">Qtà</th>
+                    </tr>
+                    <tr><td style="padding: 10px; border-bottom: 1px solid #eee;">Punti Luce Smart</td><td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('n_luci').value}</td></tr>
+                    <tr><td style="padding: 10px; border-bottom: 1px solid #eee;">Prese Smart</td><td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('n_prese').value}</td></tr>
+                    <tr><td style="padding: 10px; border-bottom: 1px solid #eee;">Telecamere WiFi</td><td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('n_cam').value}</td></tr>
+                    <tr><td style="padding: 10px; border-bottom: 1px solid #eee;">Termostato WiFi</td><td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${document.getElementById('n_termo').value == '1' ? '1' : '0'}</td></tr>
+                </table>
+                <div style="margin-top: 40px; text-align: right;">
+                    <h2 style="color: #FF6B00;">TOTALE STIMATO: ${total} €</h2>
+                    <p style="font-size: 10px; color: #888;">*Prestazione occasionale esente IVA. Il prezzo può variare dopo sopralluogo.</p>
                 </div>
             </div>
         `;
 
         const opt = {
             margin: 0,
-            filename: `Preventivo_DomusTech_${name}.pdf`,
-            html2canvas: { scale: 3, useCORS: true },
+            filename: `Preventivo_DomusTech_${nome}.pdf`,
+            html2canvas: { scale: 2, useCORS: true },
             jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
         };
 
-        html2pdf().from(pdfHtml).set(opt).save();
+        // Esecuzione generazione PDF
+        html2pdf().from(template).set(opt).save();
     }
 </script>
 

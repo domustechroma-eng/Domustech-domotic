@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Installatore Domotica Roma Sud | Shelly Luci Smart Prese Termostati</title>
-<meta name="description" content="Installatore domotica Roma Sud. Luci smart, prese WiFi, termostati, automazioni e videosorveglianza. Preventivo online gratuito.">
+<meta name="description" content="Installatore domotica Roma Sud. Luci smart, prese WiFi, termostati, serrande e videosorveglianza. Preventivo online gratuito.">
 
-<!-- jsPDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
@@ -27,14 +26,156 @@ p{text-align:center;font-size:16px;}
 .call{border:2px solid #007BFF;color:#007BFF;}
 .preventivo{background:#ff9800;color:white;}
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.grid img{width:100%;border-radius:10px;}
-
 footer{background:#0a1f33;color:white;text-align:center;padding:15px;font-size:12px;}
 
 .fixed-bar{position:fixed;bottom:0;width:100%;background:white;border-top:1px solid #ddd;padding:10px;display:flex;justify-content:space-around;z-index:999;}
 .fixed-bar a{padding:12px 20px;border-radius:30px;font-size:16px;text-decoration:none;color:white;}
 .fixed-whatsapp{background:#25D366;}
+.fixed-call{background:#007BFF;}
+
+form{max-width:500px;margin:auto;}
+input,select{width:100%;padding:12px;margin:5px 0;border-radius:8px;border:1px solid #ccc;font-size:16px;}
+button{width:100%;padding:15px;background:#ff9800;color:white;border:none;border-radius:40px;font-size:18px;font-weight:bold;}
+.result{font-size:20px;text-align:center;margin-top:10px;font-weight:bold;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Installatore Domotica Roma Sud</h1>
+<p>Shelly • Luci Smart • Prese WiFi • Termostati • Serrande • Videosorveglianza</p>
+</header>
+
+<div class="hero">
+<img src="hero-shelly.jpg" alt="Domotica casa smart Roma">
+</div>
+
+<section>
+<h2>Rendi la tua casa smart in poche ore</h2>
+<p>Installazione professionale senza opere murarie. Controlla luci, prese e riscaldamento dal telefono.</p>
+
+<a class="btn whatsapp" href="https://wa.me/393505223388">WhatsApp Diretto</a>
+<a class="btn call" href="tel:+393505223388">Chiama il Tecnico</a>
+<a class="btn preventivo" href="#preventivo">Stima Costo Installazione</a>
+</section>
+
+<section id="preventivo">
+<h2>Calcola Preventivo Smart Home</h2>
+
+<form onsubmit="calcolaPreventivo(); return false;">
+<input id="nome" placeholder="Il tuo nome" required>
+<input id="zona" placeholder="Zona (EUR, Ostia, Acilia...)" required>
+
+<label>Luci Smart (0-6)</label>
+<input type="number" id="luci" min="0" max="6" value="0">
+
+<label>Prese Smart (0-6)</label>
+<input type="number" id="prese" min="0" max="6" value="0">
+
+<label>Serrande / Tapparelle Smart (0-6)</label>
+<input type="number" id="serrande" min="0" max="6" value="0">
+
+<label>Telecamere Videosorveglianza (0-6)</label>
+<input type="number" id="cam" min="0" max="6" value="0">
+
+<label>Termostato Smart</label>
+<select id="termostato">
+<option value="0">Nessuno</option>
+<option value="1">1 Termostato</option>
+<option value="2">2-3 Termostati</option>
+</select>
+
+<button type="submit">Calcola Preventivo</button>
+</form>
+
+<div class="result" id="risultato"></div>
+<button onclick="scaricaPDF()" style="display:none" id="pdfBtn">Scarica Preventivo PDF</button>
+<button onclick="mandaWhatsApp()" style="display:none" id="waBtn">Invia Preventivo su WhatsApp</button>
+
+</section>
+
+<footer>
+DomusTech Roma • Installatore Domotica • 2026
+</footer>
+
+<div class="fixed-bar">
+<a class="fixed-whatsapp" href="https://wa.me/393505223388">WhatsApp</a>
+<a class="fixed-call" href="tel:+393505223388">Chiama</a>
+</div>
+
+<script>
+let totale=0;
+let dettagli="";
+
+function calcolaPreventivo(){
+let luci=parseInt(document.getElementById("luci").value);
+let prese=parseInt(document.getElementById("prese").value);
+let serrande=parseInt(document.getElementById("serrande").value);
+let cam=parseInt(document.getElementById("cam").value);
+let term=parseInt(document.getElementById("termostato").value);
+
+totale=0;
+dettagli="";
+
+function addItem(qty, name){
+ if(qty>0){
+  totale += qty * 50;
+  dettagli += name + ": " + qty + " x 50€\n";
+ }
+}
+
+addItem(luci,"Luci Smart");
+addItem(prese,"Prese Smart");
+addItem(serrande,"Serrande Smart");
+addItem(cam,"Telecamere");
+
+if(term==1){totale+=250; dettagli+="1 Termostato Smart: 250€\n";}
+if(term==2){totale+=500; dettagli+="2-3 Termostati Smart: 500€\n";}
+
+document.getElementById("risultato").innerHTML="💰 Stima installazione: <b>"+totale+" €</b> (indicativo)";
+document.getElementById("pdfBtn").style.display="block";
+document.getElementById("waBtn").style.display="block";
+}
+
+function scaricaPDF(){
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+let nome=document.getElementById("nome").value;
+let zona=document.getElementById("zona").value;
+
+doc.setFontSize(18);
+doc.text("DomusTech Roma",20,20);
+doc.setFontSize(12);
+doc.text("Preventivo Domotica Smart Home",20,30);
+doc.text("Cliente: "+nome,20,40);
+doc.text("Zona: "+zona,20,50);
+
+doc.text("Dettagli installazione:",20,70);
+doc.text(dettagli,20,80);
+
+doc.setFontSize(16);
+doc.text("Totale stimato: "+totale+" EUR",20,130);
+
+doc.setFontSize(10);
+doc.text("Preventivo indicativo. Sopralluogo gratuito per conferma.",20,150);
+doc.text("Telefono: 3505223388  Email: domustech.roma@gmail.com",20,160);
+
+doc.save("preventivo_domotica_"+nome+".pdf");
+}
+
+function mandaWhatsApp(){
+let nome=document.getElementById("nome").value;
+let zona=document.getElementById("zona").value;
+let testo="Salve, sono "+nome+" (zona "+zona+"). Preventivo stimato: "+totale+" EUR. Dettagli: "+dettagli;
+let url="https://wa.me/393505223388?text="+encodeURIComponent(testo);
+window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>.fixed-whatsapp{background:#25D366;}
 .fixed-call{background:#007BFF;}
 
 form{max-width:500px;margin:auto;}
@@ -369,4 +510,5 @@ window.open(url,"_blank");
 
 </body>
 </html>
+
 
